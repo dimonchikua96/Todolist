@@ -1,0 +1,11 @@
+<div class="row" *ngFor="let task of tasks;">
+    <div class="col-1 text-right">
+        <input class="form-check-input" type="checkbox" [checked]="task.state" (click)="onToggle(task)">
+    </div>
+    <div class="col-10">
+        <p [class.completed]="task.state">{{task.title}}</p>
+    </div>
+    <div class="col-1 text-right">
+        <button class="btn btn-sm btn-danger" (click)="onDelete(task)">Delete</button>
+    </div>
+</div>
